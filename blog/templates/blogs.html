@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogbeitrag - Titel des Beitrags</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen auf unserem Auto Blog!</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Startseite</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about.html">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Titel des Beitrags</h2>
+            <img src="beispielbild.jpg" alt="Bild zum Beitrag">
+            <p>Hier steht der Text des Blogbeitrags. Du kannst hier deine 
+            Informationen zum Thema des Beitrags einfügen. </p>
+            <p>Denke daran, Absätze zu verwenden, um den Text lesbarer zu gestalten.</p>
+            <blockquote>
+                <p>Dies ist ein Zitat, das du in deinem Blogbeitrag verwenden kannst.</p>
+                <p>- Autor des Zitats</p>
+            </blockquote>
+            <p>Füge weitere Absätze hinzu, um den Beitrag zu vervollständigen.</p>
+            <ul>
+                <li>Du kannst auch Listen verwenden.</li>
+                <li>Um deine Punkte hervorzuheben.</li>
+            </ul>
+        </article>
+
+        <aside>
+            <h2>Verwandte Beiträge</h2>
+            <ul>
+                <li><a href="#">Link zu einem anderen Beitrag</a></li>
+                <li><a href="#">Link zu einem weiteren Beitrag</a></li>
+            </ul>
+        </aside>
+
+        <button onclick="addItem()">
+
+        </button>
+
+        <script>
+            function addItem(){
+
+                let itemName = prompt("Eingeben")
+                let token = '{{ csrf_token }}';
+                let formData = new FormData();
+
+                formData.append('itemName', itemName);
+                formData.append('csrfmiddlewaretoken', token);
+
+                fetch('/blog',{
+                    method: 'Post',
+                    body: formData
+
+
+                });
+            }
+        </script>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Auto Blog</p>
+    </footer>
+</body>
+</html>
