@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 def blog(reqest):
     if reqest.method == 'POST':
-       print('Empfangen', reqest.POST['itemName']) 
+       print('Empfangen' , 'Name: ',reqest.POST['name'],'Text: ' , reqest.POST['text']) #Hier XML Anbindung
     return render(reqest, 'blogs.html')

@@ -3,6 +3,23 @@ body {
     margin: 0;
 }
 
+/* Die folgenen zwei Formatierungen .inputName und .inputText sind für die Textfelder */ 
+
+.inputName[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+.inputText[type="text"] {
+    width: 1000px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
 header {
     background-color: #333;
     color: #fff;

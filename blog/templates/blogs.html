@@ -44,25 +44,31 @@
             </ul>
         </aside>
 
-        <button onclick="addItem()">
+        <label for="name">Name:</label>
+        <input class="inputName" type="text" id="name" name="name" required><br><br>
 
-        </button>
+        <label for="name">Text:</label>
+        <input class="inputText" type="text" id="text" name="text" required><br><br>
+      
+        <input type="submit" value="Absenden" onclick="addItem()">
 
         <script>
             function addItem(){
 
-                let itemName = prompt("Eingeben")
+                
                 let token = '{{ csrf_token }}';
                 let formData = new FormData();
 
-                formData.append('itemName', itemName);
+                var name = document.getElementById("name").value;
+                var text = document.getElementById("text").value;
+
+                formData.append('name', name);
+                formData.append('text', text);
                 formData.append('csrfmiddlewaretoken', token);
 
-                fetch('/blog',{
-                    method: 'Post',
+                fetch('/blog/',{
+                    method: 'POST',
                     body: formData
-
-
                 });
             }
         </script>
