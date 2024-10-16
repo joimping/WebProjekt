@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Bezeichnung">
+    <complexType>
+        <xs:sequence>
+
+            <xs:element name="Automarke" type="xs:string">
+            <xs:element name="Autobezeichnung" type="xs:string">
+            <xs:element name="Technische_Details">
+            <xs:complexType>
+                <xs:sequence>
+
+                    <xs:element name="Leistung" type="xs:string">
+                    <xs:element name="max_Drehmomemt" type="xs:string">
+                    
+                </xs:sequence>
+            </complexType>
+        </xs:sequence>
+    </complexType>
+</xs:element>
+
