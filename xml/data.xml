@@ -2,12 +2,24 @@
 
 <Bezeichnung>
 
-    <Automarke>Porsche</Automarke>
-    <Autobezeichnung>911 GT3</Autobezeichnung>
+    <Auto>
+        <Automarke>Porsche</Automarke>
+        <Autobezeichnung>911 GT3</Autobezeichnung>
 
-    <Technische_Details>
-        <Leistung>640PS</Leistung>
-        <max_Drehmomemt>850Nm</max_Drehmomemt>
-    </Technische_Details>
+        <Technische_Details>
+            <Leistung>640PS</Leistung>
+            <max_Drehmomemt>850Nm</max_Drehmomemt>
+        </Technische_Details>
+    </Auto>
+
+    <Auto>
+        <Automarke>Mercedes</Automarke>
+        <Autobezeichnung>911 GT3</Autobezeichnung>
+
+        <Technische_Details>
+            <Leistung>640PS</Leistung>
+            <max_Drehmomemt>850Nm</max_Drehmomemt>
+        </Technische_Details>
+    </Auto>
 
 </Bezeichnung>
