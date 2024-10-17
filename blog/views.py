@@ -6,11 +6,11 @@ from django.shortcuts import render
 def blog(reqest):
 
    # XML-Datei parsen
-   tree = ET.parse('xml/data.xml')
+   tree = ET.parse('xml/data_copy.xml')
    root = tree.getroot()
 
    # Daten extrahieren
-   daten = []
+   blog_daten = []
    for auto in root:
       auto_daten = {}
       auto_daten['marke'] = auto.find('Automarke').text
@@ -18,11 +18,13 @@ def blog(reqest):
       technische_details = auto.find('Technische_Details')
       auto_daten['leistung'] = technische_details.find('Leistung').text
       auto_daten['drehmoment'] = technische_details.find('max_Drehmomemt').text
-      daten.append(auto_daten)
+      blog_daten.append(auto_daten)
 
    # Daten ausgeben
-   print(daten)
+   #print((blog_daten[1]) ['marke']) 
+
+
 
    if reqest.method == 'POST':
       print('Empfangen' , 'Name: ',reqest.POST['name'],'Text: ' , reqest.POST['text']) 
-   return render(reqest, 'blogs.html')
+   return render(reqest, 'blogs.html', {'blog_daten': blog_daten})
